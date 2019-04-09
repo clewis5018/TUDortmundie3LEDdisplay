@@ -176,22 +176,7 @@ void LEDStrip(int *StripIndex , byte *color, byte *saturation, byte *brightness,
   }
   else if (*currentreading < 0.1 || *plugin == false)
   {
-    leds[*StripIndex + 0] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 1] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 2] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 3] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 4] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 5] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 6] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 7] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 8] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 9] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 10] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 11] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 12] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 13] = CHSV(*color, *saturation, 0);
-    leds[*StripIndex + 14] = CHSV(*color, *saturation, 0);
-
+    fill_solid( leds, NUM_LEDS, CRGB(0,0,0));
     FastLED.show();
 
   }
@@ -220,23 +205,8 @@ void button()                   //button
 */
 void colorWipe(int *StripIndex)
 {
-    leds[*StripIndex + 0] = CHSV(0, 0, 0);
-    leds[*StripIndex + 1] = CHSV(0, 0, 0);
-    leds[*StripIndex + 2] = CHSV(0, 0, 0);
-    leds[*StripIndex + 3] = CHSV(0, 0, 0);
-    leds[*StripIndex + 4] = CHSV(0, 0, 0);
-    leds[*StripIndex + 5] = CHSV(0, 0, 0);
-    leds[*StripIndex + 6] = CHSV(0, 0, 0);
-    leds[*StripIndex + 7] = CHSV(0, 0, 0);
-    leds[*StripIndex + 8] = CHSV(0, 0, 0);
-    leds[*StripIndex + 9] = CHSV(0, 0, 0);
-    leds[*StripIndex + 10] = CHSV(0, 0, 0);
-    leds[*StripIndex + 11] = CHSV(0, 0, 0);
-    leds[*StripIndex + 12] = CHSV(0, 0, 0);
-    leds[*StripIndex + 13] = CHSV(0, 0, 0);
-    leds[*StripIndex + 14] = CHSV(0, 0, 0);
-    
-    FastLED.show();
+      fill_solid( leds, NUM_LEDS, CRGB(0,0,0));
+      FastLED.show();
 }
 
 /*
