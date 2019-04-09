@@ -1,5 +1,5 @@
 # TUDortmundie3LEDdisplay
-LED Display of 'Plug n Control' system
+LED Display
 
 Code describing a LED strip which shows the data from sensors (communicating the data using Modbus IP)
   Requires:
