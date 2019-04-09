@@ -1,7 +1,7 @@
 # TUDortmundie3LEDdisplay
 LED Display of 'Plug n Control' system
 
-Code describing a LED strip which shows the data from Smart Grid sensors (communicating the data using Modbus IP)
+Code describing a LED strip which shows the data from sensors (communicating the data using Modbus IP)
   Requires:
       - on/off button
       - magnetic (reed) sensors on outlets and magnets in plugs (boolean expressions used to know whether something is plugged in)
