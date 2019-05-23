@@ -1,0 +1,25 @@
+#include "Strip.h"
+
+  Strip strip1(A4, 0, 46, 50,  0, 1);
+
+
+void setup() { 
+  Serial.begin(9600);       
+}
+
+void loop()
+{ 
+  strip1.magnetSensor(6);           //sensor function reads outlet data
+  
+/*if(plugin == 1 && msgState == 1 && powerState == 0)
+  strip1.msgFunction();                       //if outlet is plugged in, and msg state = 1(default start state)
+
+if(plugin == 1 && msgState == 0 && powerState == 1) //if outlet is plugged in, and power state = 1
+  strip1.powerFunction(2000, 10);                   //(can only get set equal to 1 after msgFunction ends)
+
+if(plugin == 0)                   //if not plugged in at all, leave off
+  strip1.turnOff();
+
+else{}*/    //else nothing
+
+}
