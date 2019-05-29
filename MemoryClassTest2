@@ -1,0 +1,82 @@
+#include "FastLED.h"
+#include <math.h>
+
+#define DATA_PIN5 A3 //left side higher short strip
+#define DATA_PIN4 A2 //left side lower short strip
+#define DATA_PIN3 A1 //left side long strip
+#define DATA_PIN2 A5 //right side short strip
+#define DATA_PIN1 A4 //right side long strip
+
+const byte Num_Strips PROGMEM = 5;
+const byte Num_LEDs PROGMEM = 70;
+
+const byte strip_Num[] PROGMEM = {0, 1, 2, 3, 4};
+const byte strip_Start[] PROGMEM = {0, 0, 0, 0, 0}; //5 strips
+const byte strip_End[] PROGMEM = {46, 10, 66, 6, 6}; //5 strips
+const int orientation[] PROGMEM = {1, -1, 1, -1, -1};
+const float PI_FOURTH PROGMEM = {0.7854};
+byte msgState;
+
+//const byte strip_Start[] PROGMEM = {0, 20, 0, 0, 29, 47, 0, 0}; //8 strips
+//const byte strip_End[] PROGMEM = {19, 46, 10, 28, 46, 66, 6, 6}; //8 strips
+
+  
+class Strip{
+  private:
+  byte stripNum;
+  byte stripStart;
+  byte stripEnd;
+  byte orientation;
+
+  public:
+  
+  CRGB *leds;
+
+  Strip(byte stripNum)
+{    
+    this->stripNum = stripNum;
+    this->stripStart = stripStart;
+    this->stripEnd = stripEnd;
+    this->orientation = orientation;
+    FastLED.addLeds<NEOPIXEL, DATA_PIN1>(leds, Num_LEDs);
+    FastLED.addLeds<NEOPIXEL, DATA_PIN2>(leds, Num_LEDs);
+    FastLED.addLeds<NEOPIXEL, DATA_PIN3>(leds, Num_LEDs);
+    FastLED.addLeds<NEOPIXEL, DATA_PIN4>(leds, Num_LEDs);
+    FastLED.addLeds<NEOPIXEL, DATA_PIN5>(leds, Num_LEDs);
+
+  }
+  ~Strip(){}
+
+  void turnOn(){
+    *leds = CRGB::Green;
+    FastLED.show();
+  }
+
+    void turnOff(){
+    *leds = CRGB::Black;
+    FastLED.show();
+  }
+};
+
+//{ //calling classes
+Strip strip1(0);
+Strip strip2(1); 
+Strip strip3(2); 
+Strip strip4(3); 
+Strip strip5(4); 
+ 
+//Strip strip2(strip_Num[1], strip_Start[1], strip_End[1], orientation[1]); 
+
+void setup() {
+
+}
+
+void loop() {
+/*if(strip.returnPlug(4) == 1 && strip.returnMsg() == 1)
+//msg Function
+if(strip.returnPlug(4) == 1 && strip.returnMsg() == 0)
+//power function
+if(strip.returnPlug(4) == 0)
+// turn off*/
+}
+
